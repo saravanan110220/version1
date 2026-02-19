@@ -1,33 +1,19 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 int main() {
-    char op;
-    double num1, num2;
+    int n, t1 = 0, t2 = 1, nextTerm;
 
-    printf("Enter operator (+, -, *, /): ");
-    scanf("%c", &op);
-    printf("Enter two operands: ");
-    scanf("%lf %lf", &num1, &num2);
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
 
-    switch (op) {
-        case '+':
-            printf("%.1lf + %.1lf = %.1lf", num1, num2, num1 + num2);
-            break;
-        case '-':
-            printf("%.1lf - %.1lf = %.1lf", num1, num2, num1 - num2);
-            break;
-        case '*':
-            printf("%.1lf * %.1lf = %.1lf", num1, num2, num1 * num2);
-            break;
-        case '/':
-            if (num2 != 0.0)
-                printf("%.1lf / %.1lf = %.1lf", num1, num2, num1 / num2);
-            else
-                printf("Error! Division by zero.");
-            break;
-        default:
-            printf("Error! Operator is not correct");
+    printf("Fibonacci Series: ");
+
+    for (int i = 1; i <= n; ++i) {
+        printf("%d, ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
     }
-    printf("succesfull");
+
     return 0;
 }

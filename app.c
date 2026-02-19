@@ -28,6 +28,6 @@ int main() {
         default:
             printf("Error! Operator is not correct");
     }
-
+    printf("succesfull");
     return 0;
 }
